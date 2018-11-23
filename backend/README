@@ -1,0 +1,42 @@
+### 数据库 tag 设计
+三个表组成:posts,post_tags,tags
+posts:
++--------------+------------------+------+-----+---------+----------------+
+| Field        | Type             | Null | Key | Default | Extra          |
++--------------+------------------+------+-----+---------+----------------+
+| id           | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| created_at   | timestamp        | YES  |     | NULL    |                |
+| updated_at   | timestamp        | YES  |     | NULL    |                |
+| deleted_at   | timestamp        | YES  | MUL | NULL    |                |
+| title        | varchar(255)     | YES  |     | NULL    |                |
+| body         | varchar(255)     | YES  |     | NULL    |                |
+| view         | int(11)          | YES  |     | NULL    |                |
+| is_published | tinyint(1)       | YES  |     | NULL    |                |
+| good         | int(11)          | YES  |     | NULL    |                |
++--------------+------------------+------+-----+---------+----------------+
+
+post_tags:
+mysql> desc post_tags;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| created_at | timestamp        | YES  |     | NULL    |                |
+| updated_at | timestamp        | YES  |     | NULL    |                |
+| deleted_at | timestamp        | YES  | MUL | NULL    |                |
+| post_id    | int(10) unsigned | YES  |     | NULL    |                |
+| tag_id     | int(10) unsigned | YES  |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+
+tags:
+mysql> desc tags;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| created_at | timestamp        | YES  |     | NULL    |                |
+| updated_at | timestamp        | YES  |     | NULL    |                |
+| deleted_at | timestamp        | YES  | MUL | NULL    |                |
+| name       | varchar(255)     | YES  |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+

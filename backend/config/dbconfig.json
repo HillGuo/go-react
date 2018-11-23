@@ -1,0 +1,12 @@
+{
+    "Dialect": "mysql",
+    "Database": "go_react",
+    "User": "go_react",
+    "Password": "123456",
+    "Charset": "utf8",
+    "SQLLog": false,
+    "Host": "150.109.102.134",
+    "Port": 3306,
+    "MaxIdleConns": 5,
+    "MaxOpenConns": 10
+}
